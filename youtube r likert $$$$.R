@@ -1,0 +1,12 @@
+#intall.packages('likert')
+library(readr)
+library(likert)
+df.orig <- read_csv("likert example.csv")
+View(df.orig)
+df1<-data.frame(df.orig)
+str(df1)
+df2<- mutate_if(df1,is.character,as.factor)
+str(df2)
+df3<- likert(df2)
+plot(df3)
+
