@@ -1,0 +1,6 @@
+library(readr)
+df.orig <- read_csv("C:/Users/Dr. Neeraj Bali/Desktop/world bank wide to long example.csv")
+View(df.orig)
+library(tidyr)
+help("gather")
+df.long<-gather(df.orig, key = "Year", value = "Info",c(5:28))
